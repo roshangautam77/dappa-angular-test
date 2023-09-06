@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; 
+
+$color-red: #FF0000;
+$color-green: #00FF00;
+$color-blue: #0000FF;
+
+h4 { color: $color-green; }
+p { color: $color-red; }
+a { color: $color-blue; }

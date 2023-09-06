@@ -1,0 +1,61 @@
+<form [formGroup]="executiveForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="prefix">Prefix</label>
+            <select id="prefix" class="form-control" formControlName="title">
+                <option selected>Choose any one</option>
+                <option>Mr</option>
+                <option>Mrs</option>
+                <option>Ms</option>
+                <option>Dr</option>
+            </select>
+        </div>
+      <div class="form-group col-md-4">
+        <label for="firstname">First Name</label>
+        <input type="text" class="form-control" formControlName="firstName">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="initials">Initials</label>
+        <input type="text" class="form-control" formControlName="initials">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <label for="lastname">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastName">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="suffix">Suffix</label>
+        <input type="text" class="form-control" formControlName="postTitle">
+      </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label for="lastname">System Initials</label>
+            <input type="text" class="form-control" formControlName="systemInitials">
+            <div *ngIf="executiveForm.controls['systemInitials'].touched && executiveForm.controls['systemInitials'].errors">
+                <span style="color:red">System Initials is required</span>
+            </div>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="lastname">Job Title</label>
+            <input type="text" class="form-control" formControlName="jobTitle">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="group">Executive Group</label>
+          <select id="group" class="form-control" formControlName="executiveGroup">
+              <option *ngFor="let group of executiveGroup" value="{{group | json}}">{{group.name}}</option>
+          </select>
+          <div *ngIf="executiveForm.controls['executiveGroup'].touched && executiveForm.controls['executiveGroup'].errors">
+            <span style="color:red">Please select Executive Group</span>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <button *ngIf="!editMode" type="submit" class="btn btn-primary" [disabled]="executiveForm.invalid">Add</button>
+            <button *ngIf="editMode" type="submit" class="btn btn-primary" [disabled]="executiveForm.invalid">Update</button>
+        </div>
+    </div>
+  </form>

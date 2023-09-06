@@ -1,0 +1,14 @@
+<!-- Diameter of spinner intentionally kept big so that it is visible as call completes in a fraction fo seconds-->
+<mat-spinner [diameter]="500" *ngIf="spinnerService.visibility | async">
+</mat-spinner>
+
+<div class="container-fluid">
+  <div class="row" style="margin-top:10px">
+    <div class="col-md-3 col-lg-3">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-md-9 col-lg-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

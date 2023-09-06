@@ -1,0 +1,32 @@
+<div class="row">
+<div class="col-md-8"><h4>Executive Group list</h4></div>
+<div class="col-md-4">
+    <button type="button" class="btn btn-primary" (click)="addGroup()">
+        Add Executive Group
+    </button>
+</div>
+</div>
+<br>
+
+<div class="table-responsive table-responsive-sm table-responsive-md table-responsive-lg">
+    <table class="table table-striped table-hover table-bordered align-middle">
+        <thead>
+            <tr>
+                <th scope="col">Sr</th>
+                <th scope="col">Name</th>
+                <th scope="col">Version</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let group of allGroups; let i = index">
+                <th scope="row">{{i + 1}}</th>
+                <td>{{group.name}}</td>
+                <td>{{group.version}}</td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm" (click)="editGroup(group.id)">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

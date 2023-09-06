@@ -1,0 +1,49 @@
+<div align="right">
+    <button type="button" class="btn btn-primary" (click)="editExecutive(execData.id)">
+        Edit Executive Details
+    </button>
+</div>
+<br>
+
+<div class="table-responsive table-responsive-sm table-responsive-md table-responsive-lg">
+    <table class="table table-striped table-hover table-bordered align-middle">
+        <tbody>
+            <tr>
+                <td>Title</td>
+                <td>{{execData.title}}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{execData.lastName}}</td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>{{execData.firstName}}</td>
+            </tr>
+            <tr>
+                <td>Initials</td>
+                <td>{{execData.initials}}</td>
+            </tr>
+            <tr>
+                <td>System Initials</td>
+                <td>{{execData.systemInitials}}</td>
+            </tr>
+            <tr>
+                <td>Post Title</td>
+                <td>{{execData.postTitle}}</td>
+            </tr>
+            <tr>
+                <td>Salutation</td>
+                <td>{{execData.salutation}}</td>
+            </tr>
+            <tr>
+                <td>Job Title</td>
+                <td>{{execData.jobTitle}}</td>
+            </tr>
+            <tr>
+                <td>Executive Group</td>
+                <td>{{execData.executiveGroup.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
